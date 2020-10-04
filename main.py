@@ -1,14 +1,17 @@
 
-import random
-import insertion
-import swap
+import pygame
+import bubbleSortVis as bubble
+import insertionSortVis as insertion
 
-data = []
-for i in range(0,30):
-    n = random.randint(1,1000)
-    data.append(n)
+numItems = 100
 
-print(data)
-print(insertion.insertionSort(data))
+pygame.init()
+screen = pygame.display.set_mode([800,600])
 
+insertionSort = insertion.insertionSortVis(screen, numItems)
+insertionSort.sort()
 
+bubbleSort = bubble.bubbleSortVis(screen, numItems)
+bubbleSort.sort()
+
+pygame.quit()
