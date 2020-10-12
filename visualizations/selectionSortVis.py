@@ -1,9 +1,8 @@
-
 import pygame
 import tools.swap as sw
 import random
 
-class bubbleSortVis:
+class selectionSortVis:
     
     def __init__(self, sc, numItems):
         self._length = numItems
@@ -14,21 +13,21 @@ class bubbleSortVis:
         self._rectWidth = self._screenWidth // numItems
         
         self._font = pygame.font.SysFont("comicsans", 26)
-        self._sortName = self._font.render("Bubble Sort", True, (127,127,127))
+        self._sortName = self._font.render("Selection Sort", True, (127,127,127))
         
         for i in range(0, self._length-1): 
             self._data.append(random.randint(1,1000))
         
     def sort(self):
-        for i in range (0, len(self._data)-1):
-            self._currIndex = 0
-            while (self._currIndex < len(self._data) - i - 1): 
-                if (self._data[self._currIndex] > self._data[self._currIndex+1]):
-                    self._data = sw.swap(self._data, self._currIndex, self._currIndex+1)
-                    self.__updateImage()
-                self._currIndex += 1
+        for i in range(0, len(self._data)-1):
+            self._minIndex = i
+            for j in range(i+1, len(self._data)-1):
+                if (self._data[j] < self._data[self._minIndex]):
+                    self._minIndex = j
+            sw.swap(self._data, self._minIndex, i)
+            self._updateImage()
         
-    def __updateImage(self):
+    def _updateImage(self):
         self._screen.fill((0,0,0))
         
         self._screen.blit(self._sortName, (10, 10))
