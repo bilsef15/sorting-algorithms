@@ -1,6 +1,6 @@
 
 import pygame
-import tools.swap as sw
+import tools.tools as tools
 import random
 
 class quickSortVis:
@@ -25,13 +25,13 @@ class quickSortVis:
  
     def partition(self, data: list, low: int, high: int):
             pivot = data[high]
-            i = low-1
+            i = low - 1
             for j in range(low, high):
                 if (data[j] < pivot):
                     i+=1
-                    sw.swap(data, i, j)
+                    tools.swap(data, i, j)
                     self.__updateImage(data)
-            sw.swap(data, i+1, high)
+            tools.swap(data, i+1, high)
             self.__updateImage(data)
             return i+1
     

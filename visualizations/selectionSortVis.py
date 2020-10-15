@@ -1,5 +1,5 @@
 import pygame
-import tools.swap as sw
+import tools.tools as tools
 import random
 
 class selectionSortVis:
@@ -24,7 +24,7 @@ class selectionSortVis:
             for j in range(i+1, len(self._data)-1):
                 if (self._data[j] < self._data[self._minIndex]):
                     self._minIndex = j
-            sw.swap(self._data, self._minIndex, i)
+            tools.swap(self._data, self._minIndex, i)
             self._updateImage()
         
     def _updateImage(self):

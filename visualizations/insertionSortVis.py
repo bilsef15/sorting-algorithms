@@ -1,6 +1,6 @@
 
 import pygame
-import tools.swap as sw
+import tools.tools as tools
 import random
 
 class insertionSortVis:
@@ -24,7 +24,7 @@ class insertionSortVis:
         for i in range(1, len(self._data)):
             self._key = i
             while (self._key >= 1) and (self._data[self._key-1] > self._data[self._key]):
-                self._data = sw.swap(self._data, self._key, self._key-1)
+                self._data = tools.swap(self._data, self._key, self._key-1)
                 self._key-=1
                 self.__updateImage()
         

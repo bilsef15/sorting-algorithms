@@ -1,14 +1,14 @@
-import tools.swap as sw
+import tools.tools as tools
 
 
 def partition(data: list, low: int, high: int):
     pivot = data[high]
-    i = low-1
+    i = low - 1
     for j in range(low, high):
         if (data[j] < pivot):
             i+=1
-            sw.swap(data, i, j)
-    sw.swap(data, i+1, high)
+            tools.swap(data, i, j)
+    tools.swap(data, i+1, high)
     return i+1
     
 def quickSort(data: list, low: int, high: int):
