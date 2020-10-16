@@ -51,3 +51,24 @@ def randomList(length: int) -> list:
     for i in range(0, length): 
         data.append(random.randint(1,1000))
     return data
+
+def isSorted(data: list) -> bool:
+    '''
+    Returns true if the list is sorted from left to right else returns false.
+
+    Parameters
+    ----------
+    data : list
+        The list to be checked.
+
+    Returns
+    -------
+    bool
+        True if the list is sorted from left to right else it returns false.
+
+    '''
+    sort = True
+    for i in range(1, len(data)-1):
+        if (data[i] < data[i-1]):
+            sort = False
+    return sort
