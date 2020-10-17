@@ -3,8 +3,9 @@ This module contains useful functions for developing sorting algorithms.
    
 Functions
 ---------
-swap( list, int, int) -> list
+swap(list, int, int) -> list
 randomList(int) -> list
+isSorted(list) -> bool
 '''
 
 import random
