@@ -1,7 +1,6 @@
 '''Implementation of quick sort'''
 import tools.tools as tools
 
-
 def partition(data: list, low: int, high: int) -> int:
     '''
     The partition function of quick sort. It uses the 'high' element as
@@ -33,25 +32,31 @@ def partition(data: list, low: int, high: int) -> int:
     tools.swap(data, i+1, high)
     return i+1
     
-def quickSort(data: list, low: int, high: int) -> list:
+def quickSort(data: list, low: int = 0, high: int = None) -> list:
     '''
-    Sorts the list via quicksort.
+    This sorts the list via quick sort.
 
     Parameters
     ----------
     data : list
-        The list to be sorted.
-    low : int
-        Starting index.
-    high : int
-        Ending index.
+        The list to be acted on.
+    low : int, optional
+        The lower index of the list to be sorted. The default is 0.
+    high : int, optional
+        The higher index of the list to be sorted. The default is the length of the given list.
 
     Returns
     -------
-    data : list
+    list
         The sorted list from low to high.
 
     '''
+    
+    #Handles the default value. Since default high is len(data) and data is an
+    #arguement. One must use an if-check.
+    if (high == None):
+        high = len(data)-1
+        
     if low < high:
         part = partition(data, low, high)
         quickSort(data, low, part-1)
