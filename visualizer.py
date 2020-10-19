@@ -1,25 +1,25 @@
 
 import pygame
-import visualizations.bubbleSortVis as bubble
-import visualizations.insertionSortVis as insertion
-import visualizations.selectionSortVis as selection
-import visualizations.quickSortVis as quick
+import visualizations.sortVisualizer as sortVisualizer
+
 
 numItems = 150
 
 pygame.init()
 screen = pygame.display.set_mode([800,600])
 
-quickSort = quick.quickSortVis(screen, numItems)
-quickSort.sort()
+algoVisualizer = sortVisualizer.sortVisualizer(screen, numItems)
 
-insertionSort = insertion.insertionSortVis(screen, numItems)
-insertionSort.sort()
+algoVisualizer.newList()
+algoVisualizer.quickSort()
 
-bubbleSort = bubble.bubbleSortVis(screen, numItems)
-bubbleSort.sort()
+algoVisualizer.newList()
+algoVisualizer.insertionSort()
 
-selectionSort = selection.selectionSortVis(screen, numItems)
-selectionSort.sort()
+algoVisualizer.newList()
+algoVisualizer.bubbleSort()
+
+algoVisualizer.newList()
+algoVisualizer.selectionSort()
 
 pygame.quit()
