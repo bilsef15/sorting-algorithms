@@ -47,7 +47,7 @@ class sortVisualizer:
     
     def __init__(self, sc: pygame.surface, numItems: int):
         '''
-        Instantiates a sortVisualizer object
+        This instantiates a sortVisualizer object.
         
         Parameters
         ----------
@@ -61,7 +61,7 @@ class sortVisualizer:
         self._data = tools.randomList(numItems)
         self._screenWidth = pygame.display.get_surface().get_width()
         self._screenHeight = pygame.display.get_surface().get_height()
-        self._rectWidth = self._screenWidth // numItems
+        self._rectWidth = (self._screenWidth - 40) / numItems
         
         self._font = pygame.font.SysFont("comicsans", 26)
         self._sortName = ""
@@ -100,7 +100,7 @@ class sortVisualizer:
         self._screen.blit(self._sortNameRendered, (10, 10))
         
         for i in range(0, self._length-1):
-            pygame.draw.rect(self._screen, (127,127,127), [i*self._rectWidth, self._screenHeight - self._data[i] // 2, self._rectWidth, self._data[i] // 2] )
+            pygame.draw.rect(self._screen, (127,127,127), [i*self._rectWidth + 20, self._screenHeight - self._data[i] // 2, self._rectWidth - 3, self._data[i] // 2] )
         pygame.display.update()
         
         for event in pygame.event.get():
@@ -160,6 +160,7 @@ class sortVisualizer:
                 if (self._data[j] < self._data[self._minIndex]):
                     self._minIndex = j
             tools.swap(self._data, self._minIndex, i)
+            pygame.time.wait(50)
             self.__updateImage()
                 
             
@@ -223,6 +224,7 @@ class sortVisualizer:
             if (data[j] < pivot):
                 i+=1
                 tools.swap(data, i, j)
+                pygame.time.wait(15)
                 self.__updateImage()
         tools.swap(data, i+1, high)
         self.__updateImage()
@@ -246,10 +248,11 @@ class sortVisualizer:
         None.
 
         '''
+        pygame.time.wait(20)
         if low < high:
             pivot = self.partition(data, low, high)
-            self.quickSortAlgo(data, low, pivot-1)
-            self.quickSortAlgo(data, pivot+1, high)
+            self.__quickSortAlgo(data, low, pivot-1)
+            self.__quickSortAlgo(data, pivot+1, high)
                 
                 
                 
