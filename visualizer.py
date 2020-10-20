@@ -1,25 +1,14 @@
 
 import pygame
-import visualizations.sortVisualizer as sortVisualizer
+import visualizerModules.sortMenu as sm
 
 
-numItems = 150
+numItems = 100
 
 pygame.init()
 screen = pygame.display.set_mode([800,600])
 
-algoVisualizer = sortVisualizer.sortVisualizer(screen, numItems)
+sortMenu = sm.sortMenu(screen, numItems)
 
-algoVisualizer.newList()
-algoVisualizer.quickSort()
-
-algoVisualizer.newList()
-algoVisualizer.insertionSort()
-
-algoVisualizer.newList()
-algoVisualizer.bubbleSort()
-
-algoVisualizer.newList()
-algoVisualizer.selectionSort()
-
-pygame.quit()
+while True:
+    sortMenu.run()
