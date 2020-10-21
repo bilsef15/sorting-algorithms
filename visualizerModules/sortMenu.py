@@ -1,4 +1,6 @@
-
+'''
+Sort Menu is a graphical menu based driver for sort visualizer.
+'''
 import pygame
 import visualizerModules.sortVisualizer as sv
 
