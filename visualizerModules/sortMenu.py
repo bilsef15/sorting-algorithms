@@ -8,10 +8,10 @@ class sortMenu:
     
     def __init__(self, sc: pygame.surface, numItems: int):
         self._sortVisualizer = sv.sortVisualizer(sc, numItems)
-        self._buttons = [["Bubble Sort", self.__bubbleSort],
-                         ["Selection Sort", self.__selectionSort],
-                         ["Insertion Sort", self.__insertionSort],
-                         ["Quick Sort", self.__quickSort]]
+        self._buttons = [["Bubble Sort", self._sortVisualizer.bubbleSort],
+                         ["Selection Sort", self._sortVisualizer.selectionSort],
+                         ["Insertion Sort", self._sortVisualizer.insertionSort],
+                         ["Quick Sort", self._sortVisualizer.quickSort]]
         self._font = pygame.font.SysFont("comicsans", 26)
         self._fontTitle = pygame.font.SysFont("comicsans", 36)
             
@@ -30,22 +30,6 @@ class sortMenu:
             button[0] = self._font.render(button[0], True, (255,255,255))
             button.append(self._screenWidth // 4)
             button.append(self._buttonHeight * i)
-
-    def __bubbleSort(self):
-        self._sortVisualizer.newList()
-        self._sortVisualizer.bubbleSort()
-    
-    def __selectionSort(self):
-        self._sortVisualizer.newList()
-        self._sortVisualizer.selectionSort()
-        
-    def __insertionSort(self):
-        self._sortVisualizer.newList()
-        self._sortVisualizer.insertionSort()
-    
-    def __quickSort(self):
-        self._sortVisualizer.newList()
-        self._sortVisualizer.quickSort()
     
     def __drawButtons(self):
         for button in self._buttons:
@@ -60,6 +44,7 @@ class sortMenu:
         
         for button in self._buttons:
             if (click[0] == 1) and (button[2] < mouse[0] < (button[2] + self._buttonWidth)) and ((button[3] + self._buttonHeight) < mouse[1] < (button[3] + self._buttonHeight + self._buttonHeight - 20)):
+                self._sortVisualizer.newList()
                 button[1]()
                 
             

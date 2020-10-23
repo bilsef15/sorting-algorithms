@@ -36,6 +36,7 @@ class sortVisualizer:
     newList(self)
     __updateImage(self)
     __renderName(self, name)
+    newList(self, length: int = None)
     bubbleSort(self)
     selectionSort(self)
     insertionSort(self)
