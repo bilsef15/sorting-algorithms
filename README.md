@@ -16,7 +16,7 @@ Just clone the repository and run visualizer.py.
 `python visualizer.py`
 
 # Structure
-Algorithms - holds non-graphical implementations of the sorting algorithms
+algorithms - holds non-graphical implementations of the sorting algorithms
 
 readmeAssets - those beautiful gifts (thanks screen to gif!)
 
@@ -32,5 +32,5 @@ visualizer.py - run this for those pretty visualizations!
 - [x] Menu
 - [ ] Merge Sort
 - [ ] Cocktail Sort
-- [ ] Shell Sort
+- [X] Shell Sort
 - [ ] Other sorting algorithms?

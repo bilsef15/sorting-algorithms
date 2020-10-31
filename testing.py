@@ -4,6 +4,7 @@ import algorithms.bubble as bubble
 import algorithms.quick as quick
 import algorithms.insertion as insertion
 import algorithms.selection as selection
+import algorithms.shell as shell
 import tools.tools as tools
 
 class testSortingAlgorithms(unittest.TestCase):
@@ -30,6 +31,12 @@ class testSortingAlgorithms(unittest.TestCase):
         self.assertTrue(tools.isSorted(selection.selectionSort(
             tools.randomList(500))))
 
+    def testShellSort(self):
+        self.assertTrue(tools.isSorted(shell.shellSort(
+            tools.randomList(50))))
+        self.assertTrue(tools.isSorted(shell.shellSort(
+            tools.randomList(500))))
+    
 
 if __name__== '__main__':
     unittest.main()

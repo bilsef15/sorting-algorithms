@@ -43,6 +43,7 @@ class sortVisualizer:
     quickSort(self)
     partition(self, data: list, low: int, high: int)
     _quickSortAlgo(self, data: list, low: int, high: int):
+    shellSort(self)
     
     '''
     
@@ -137,12 +138,12 @@ class sortVisualizer:
         '''
         self._renderName("Bubble Sort")
         for i in range (0, len(self._data)-1):
-            self._currIndex = 0
-            while (self._currIndex < len(self._data) - i - 1): 
-                if (self._data[self._currIndex] > self._data[self._currIndex+1]):
-                    self._data = tools.swap(self._data, self._currIndex, self._currIndex+1)
+            currIndex = 0
+            while (currIndex < len(self._data) - i - 1): 
+                if (self._data[currIndex] > self._data[currIndex+1]):
+                    self._data = tools.swap(self._data, currIndex, currIndex+1)
                     self._updateImage()
-                self._currIndex += 1
+                currIndex += 1
 
     
     def selectionSort(self):
@@ -156,11 +157,11 @@ class sortVisualizer:
         '''
         self._renderName("Selection Sort")
         for i in range(0, len(self._data)-1):
-            self._minIndex = i
+            minIndex = i
             for j in range(i+1, len(self._data)-1):
-                if (self._data[j] < self._data[self._minIndex]):
-                    self._minIndex = j
-            tools.swap(self._data, self._minIndex, i)
+                if (self._data[j] < self._data[minIndex]):
+                    minIndex = j
+            tools.swap(self._data, minIndex, i)
             pygame.time.wait(50)
             self._updateImage()
                 
@@ -176,10 +177,10 @@ class sortVisualizer:
         '''
         self._renderName("Insertion Sort")
         for i in range(1, len(self._data)):
-            self._key = i
-            while (self._key >= 1) and (self._data[self._key-1] > self._data[self._key]):
-                self._data = tools.swap(self._data, self._key, self._key-1)
-                self._key-=1
+            key = i
+            while (key >= 1) and (self._data[key-1] > self._data[key]):
+                self._data = tools.swap(self._data, key, key-1)
+                key-=1
                 self._updateImage()
                 
     
@@ -254,7 +255,32 @@ class sortVisualizer:
             pivot = self.partition(data, low, high)
             self._quickSortAlgo(data, low, pivot-1)
             self._quickSortAlgo(data, pivot+1, high)
-                
+
+    def shellSort(self):
+        '''
+        This sorts the internal list via shell sort.
+    
+        Returns
+        -------
+        None.
+    
+        '''
+        self._renderName("Shell Sort")
+        interval = len(self._data)//2
+        while interval > 0:
+            for i in range(interval, len(self._data)):
+                firstDatum = self._data[i]
+                compareIndex = i
+                while compareIndex >= interval and self._data[
+                        compareIndex-interval] > firstDatum:
+                    self._data[compareIndex] = self._data[compareIndex - interval]
+                    self._updateImage()
+                    compareIndex -= interval
+                self._data[compareIndex] = firstDatum
+                pygame.time.wait(10)
+                self._updateImage()
+            interval //= 2
+             
                 
                 
                 

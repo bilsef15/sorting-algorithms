@@ -3,7 +3,7 @@ import pygame
 import visualizerModules.sortMenu as sm
 
 
-numItems = 75
+numItems = 60
 
 pygame.init()
 screen = pygame.display.set_mode([800,600])

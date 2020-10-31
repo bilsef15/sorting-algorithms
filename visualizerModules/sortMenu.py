@@ -86,7 +86,8 @@ class sortMenu:
         self._buttons = [["Bubble Sort", self._sortVisualizer.bubbleSort],
                          ["Selection Sort", self._sortVisualizer.selectionSort],
                          ["Insertion Sort", self._sortVisualizer.insertionSort],
-                         ["Quick Sort", self._sortVisualizer.quickSort]]
+                         ["Quick Sort", self._sortVisualizer.quickSort],
+                         ["Shell Sort", self._sortVisualizer.shellSort]]
         self._font = pygame.font.SysFont("comicsans", 26)
         self._fontTitle = pygame.font.SysFont("comicsans", 36)
             
