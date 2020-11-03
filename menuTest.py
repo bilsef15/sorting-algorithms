@@ -12,13 +12,13 @@ screen = pygame.display.set_mode([800,800])
 
 mainMenu = menu.Menu(screen)
 
-mainMenu.addTitle("Test Title 1", 0.0, 0.0, 0.2, 0.1)
-mainMenu.addTitle("Test Title 2", 0.4, 0.0, 0.2, 0.1)
-mainMenu.addTitle("Test Title 3", 0.8, 0.0, 0.2, 0.1)
+mainMenu.addText("Test Title 1", 0.0, 0.0, 0.2, 0.1)
+mainMenu.addText("Test Title 2", 0.4, 0.0, 0.2, 0.1)
+mainMenu.addText("Test Title 3", 0.8, 0.0, 0.2, 0.1)
 
 for x in range(0, 10):
     for y in range(1, 10):
-        mainMenu.addButton(f'Test {x + y*10}', x/10, y/10, 0.08, 0.08, clicked)
+        mainMenu.addButton(f'Test {x + y*10}', x/10, y/10, 0.08, 0.08, clicked, (x*5, y*5, x*y + 100), (y*5, x*5, x*y))
         
 while True:
     mainMenu.run()
