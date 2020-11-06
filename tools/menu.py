@@ -42,8 +42,7 @@ class Menu:
     
     def __init__(self, sc: pygame.surface):
 
-        self._buttons = []
-        self._text = [] #[Name, Rect]...
+        self._elements = []
         self._titleFont = pygame.font.SysFont("comicsans", 36)
             
         self._screen = sc
@@ -59,13 +58,10 @@ class Menu:
         None.
 
         '''
-        for text in self._text:
-            self._screen.blit(text[0], text[1])
-            
-        for button in self._buttons:
-            button.draw(self._screen)
+        for element in self._elements:
+            element.draw(self._screen)
     
-    def _wereButtonsClicked(self):
+    def _wereElementsClicked(self):
         '''
         This checks whether a button in the list was clicked and runs the
         appropriate function.
@@ -75,22 +71,19 @@ class Menu:
         None.
 
         '''
-        for button in self._buttons:
-            button.wasClicked()
+        for element in self._elements:
+            element.wasClicked()
             
-    def addButton(self, text: str, top: float, left: float, width: float, height: float, func, buttonColor: tuple=(127,127,127), textColor: tuple=(255,255,255), font="comicsans", pt=26):
+    def addButton(self, text: str, top: float, left: float, width: float, height: float, func=mo.doNothing, buttonColor: tuple=(127,127,127), textColor: tuple=(255,255,255), font: str="comicsans", pt=26):
         newButton = mo.Button(text, top, left, width, height, func, buttonColor, textColor, font, pt)
-        self._buttons.append(newButton)
+        self._elements.append(newButton)
     
-    def addText(self, text, top: float, left: float, width: float, height: float):
-        text = self._titleFont.render(text, True, (255,255,255))
-        top = top*self._screenHeight
-        left = left*self._screenWidth
-        width = width*self._screenWidth
-        height = height*self._screenWidth
-        titleRect = pygame.Rect(top, left, width, height)
-        titleRect = text.get_rect(center = titleRect.center)
-        self._text.append([text, titleRect])
+    def addText(self, text, top: float, left: float, width: float, height: float, func=mo.doNothing, textColor: tuple=(255,255,255), font: str="comicsans", pt=32):
+        newText = mo.Text( text, top, left, width, height, func, textColor, font, pt)
+        self._elements.append(newText)
+        
+    def doNothing(self):
+        return
         
     def run(self):
         '''
@@ -104,7 +97,7 @@ class Menu:
         self._screen.fill((0,0,0))
         self._draw()
         pygame.display.update()
-        self._wereButtonsClicked()
+        self._wereElementsClicked()
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

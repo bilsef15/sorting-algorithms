@@ -3,7 +3,6 @@ import tools.menu as menu
 
 
 def clicked():
-    
     position = pygame.mouse.get_pos()
     print(f'You clicked a button! x={position[0]}, y={position[1]}')
 
