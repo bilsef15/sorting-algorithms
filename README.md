@@ -35,4 +35,8 @@ visualizer.py - run this for those pretty visualizations!
 - [ ] Merge Sort
 - [ ] Cocktail Sort
 - [X] Shell Sort
+
+# Potential Features (again, in no particular order)
 - [ ] Other sorting algorithms?
+- [ ] Complexity information during sort
+- [ ] Ability to change number of elements
