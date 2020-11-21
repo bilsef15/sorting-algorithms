@@ -78,7 +78,7 @@ class Menu:
         newButton = mo.Button(text, left, top, width, height, func, buttonColor, textColor, font, pt)
         self._elements.append(newButton)
     
-    def addText(self, text, left: float, top: float, width: float, height: float, func=mo.doNothing, textColor: tuple=(255,255,255), font: str="comicsans", pt=32):
+    def addText(self, text: str, left: float, top: float, width: float, height: float, func=mo.doNothing, textColor: tuple=(255,255,255), font: str="comicsans", pt=32):
         newText = mo.Text( text, left, top, width, height, func, textColor, font, pt)
         self._elements.append(newText)
         
