@@ -18,13 +18,15 @@ Just clone the repository and run visualizer.py.
 # Structure
 algorithms - holds non-graphical implementations of the sorting algorithms
 
-readmeAssets - those beautiful gifts (thanks screen to gif!)
+readmeAssets - those beautiful gifs (thanks screen to gif!)
 
 visualizerModules - modules for the visualizer
 
-tools - some helpful tools for the modules
+tools - some helpful tools for the visualizer and algorithms
 
-testing.py - some unit testing
+algoTest.py - algorithm unit testing
+
+menuTest.py - menu.py testing 
 
 visualizer.py - run this for those pretty visualizations!
 
