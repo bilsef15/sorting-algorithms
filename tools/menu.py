@@ -75,10 +75,76 @@ class Menu:
             element.wasClicked()
             
     def addButton(self, text: str, left: float, top: float, width: float, height: float, func=mo.doNothing, buttonColor: tuple=(127,127,127), textColor: tuple=(255,255,255), font: str="comicsans", pt=26):
+        '''
+        This adds a button object to the menu. The position values are a float between
+        0 and 1.0 representing a percentage of the total value.
+
+        Parameters
+        ----------
+        text : str
+            The text displayed on the button.
+        left : float
+            The left x position of the button.
+        top : float
+            The upper y position of the button.
+        width : float
+            The width of the button.
+        height : float
+            The height of the button.
+        func : TYPE, optional
+            The function ran when the button is pressed. 
+            The default is mo.doNothing which does nothing.
+        buttonColor : tuple, optional
+            The color of the button. The default is gray, (127,127,127).
+        textColor : tuple, optional
+            The color of the text on the button. 
+            The default is white, (255,255,255).
+        font : str, optional
+            The font of the text. The default is "comicsans".
+        pt : TYPE, optional
+            The size of the fon in points. The default is 26.
+
+        Returns
+        -------
+        None.
+
+        '''
         newButton = mo.Button(text, left, top, width, height, func, buttonColor, textColor, font, pt)
         self._elements.append(newButton)
     
     def addText(self, text: str, left: float, top: float, width: float, height: float, func=mo.doNothing, textColor: tuple=(255,255,255), font: str="comicsans", pt=32):
+        '''
+        This adds a text object to the menu. The position values are a float between
+        0 and 1.0 representing a percentage of the total value. The text will be
+        at the center of the rectangle.
+
+        Parameters
+        ----------
+        text : str
+            The text displayed.
+        left : float
+            The left side of the text rectangle.
+        top : float
+            The upper side of the text rectangle.
+        width : float
+            The width of the text rectangle.
+        height : float
+            The height of the rectangle.
+        func : TYPE, optional
+            The function ran when the text rectange is clicked. 
+            The default is mo.doNothing which does nothing.
+        textColor : tuple, optional
+            The color of the displayed text. The default is white, (255,255,255).
+        font : str, optional
+            The font of the text. The default is "comicsans".
+        pt : TYPE, optional
+            The size of the text in points. The default is 32.
+
+        Returns
+        -------
+        None.
+
+        '''
         newText = mo.Text( text, left, top, width, height, func, textColor, font, pt)
         self._elements.append(newText)
         
