@@ -74,10 +74,15 @@ class Menu:
         for element in self._elements:
             element.wasClicked()
             
-    def addButton(self, text: str, left: float, top: float, width: float, height: float, func=mo.doNothing, buttonColor: tuple=(127,127,127), textColor: tuple=(255,255,255), font: str="comicsans", pt=26):
+    def addButton(self, text: str, left: float, top: float, width: float,
+                  height: float, func=mo.doNothing, 
+                  buttonColor: tuple=(127,127,127), 
+                  textColor: tuple=(255,255,255), 
+                  font: str="comicsans", pt=26):
         '''
-        This adds a button object to the menu. The position values are a float between
-        0 and 1.0 representing a percentage of the total value.
+        This adds a button object to the menu. The position values 
+        are a float between 0 and 1.0 representing a percentage of the
+        total value.
 
         Parameters
         ----------
@@ -112,7 +117,9 @@ class Menu:
         newButton = mo.Button(text, left, top, width, height, func, buttonColor, textColor, font, pt)
         self._elements.append(newButton)
     
-    def addText(self, text: str, left: float, top: float, width: float, height: float, func=mo.doNothing, textColor: tuple=(255,255,255), font: str="comicsans", pt=32):
+    def addText(self, text: str, left: float, top: float, width: float, 
+                height: float, func=mo.doNothing, 
+                textColor: tuple=(255,255,255), font: str="comicsans", pt=32):
         '''
         This adds a text object to the menu. The position values are a float between
         0 and 1.0 representing a percentage of the total value. The text will be
