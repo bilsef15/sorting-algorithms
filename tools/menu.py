@@ -74,12 +74,12 @@ class Menu:
         for element in self._elements:
             element.wasClicked()
             
-    def addButton(self, text: str, top: float, left: float, width: float, height: float, func=mo.doNothing, buttonColor: tuple=(127,127,127), textColor: tuple=(255,255,255), font: str="comicsans", pt=26):
-        newButton = mo.Button(text, top, left, width, height, func, buttonColor, textColor, font, pt)
+    def addButton(self, text: str, left: float, top: float, width: float, height: float, func=mo.doNothing, buttonColor: tuple=(127,127,127), textColor: tuple=(255,255,255), font: str="comicsans", pt=26):
+        newButton = mo.Button(text, left, top, width, height, func, buttonColor, textColor, font, pt)
         self._elements.append(newButton)
     
-    def addText(self, text, top: float, left: float, width: float, height: float, func=mo.doNothing, textColor: tuple=(255,255,255), font: str="comicsans", pt=32):
-        newText = mo.Text( text, top, left, width, height, func, textColor, font, pt)
+    def addText(self, text, left: float, top: float, width: float, height: float, func=mo.doNothing, textColor: tuple=(255,255,255), font: str="comicsans", pt=32):
+        newText = mo.Text( text, left, top, width, height, func, textColor, font, pt)
         self._elements.append(newText)
         
     def doNothing(self):

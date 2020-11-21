@@ -3,7 +3,7 @@ This contains the sortVisualizer class which displays sorting algorithms via pyg
 '''
 
 import pygame
-import tools.tools as tools
+import tools.toolFunctions as tools
 
 class sortVisualizer:
     '''

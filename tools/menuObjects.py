@@ -6,7 +6,7 @@ def doNothing():
 
 class Button:
     
-    def __init__(self, text: str, top: float, left: float, width: float, height: float, func, buttonColor: tuple, textColor: tuple, font: str, pt: int):
+    def __init__(self, text: str, left: float, top: float, width: float, height: float, func, buttonColor: tuple, textColor: tuple, font: str, pt: int):
         
         self._buttonColor = buttonColor
         self._textColor = textColor
@@ -23,7 +23,7 @@ class Button:
         left = left*screenWidth
         width = width*screenWidth
         height = height*screenWidth
-        self._buttonRect = pygame.Rect(top,left,width,height)
+        self._buttonRect = pygame.Rect(left,top,width,height)
         self._nameRect = self._text.get_rect(center=self._buttonRect.center)
         
     def draw(self, screen):
@@ -38,7 +38,7 @@ class Button:
             
 class Text:
     
-    def __init__(self, text, top: float, left: float, width: float, height: float, func, textColor: tuple, font: str, pt: int):
+    def __init__(self, text, left: float, top: float, width: float, height: float, func, textColor: tuple, font: str, pt: int):
         
         self._textColor = textColor
         
@@ -55,7 +55,7 @@ class Text:
         width = width*screenWidth
         height = height*screenWidth
         
-        self._textRect = titleRect = pygame.Rect(top, left, width, height)
+        self._textRect = titleRect = pygame.Rect(left, top, width, height)
         self._textRect = self._text.get_rect(center = titleRect.center)
         
     def draw(self, screen):
