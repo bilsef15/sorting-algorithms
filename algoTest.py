@@ -5,7 +5,7 @@ import algorithms.quick as quick
 import algorithms.insertion as insertion
 import algorithms.selection as selection
 import algorithms.shell as shell
-import tools.tools as tools
+import tools.toolFunctions as tools
 
 class testSortingAlgorithms(unittest.TestCase):
     

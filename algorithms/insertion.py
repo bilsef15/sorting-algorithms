@@ -1,6 +1,6 @@
 '''Implementation of insertion sort algorithm'''
 
-import tools.tools as tools
+import tools.toolFunctions as tools
 
 def insertionSort(data: list) -> list:
     '''

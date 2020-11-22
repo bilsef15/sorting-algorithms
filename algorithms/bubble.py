@@ -1,6 +1,6 @@
 '''Implementation of bubble sort'''
 
-import tools.tools as tools
+import tools.toolFunctions as tools
 
 def bubbleSort(data: list) -> list:
     '''

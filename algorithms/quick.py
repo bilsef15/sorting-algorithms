@@ -1,5 +1,5 @@
 '''Implementation of quick sort'''
-import tools.tools as tools
+import tools.toolFunctions as tools
 
 def partition(data: list, low: int, high: int) -> int:
     '''
