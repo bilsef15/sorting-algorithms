@@ -17,9 +17,9 @@ def selectionSort(data: list) -> list:
         The sorted list.
 
     '''
-    for i in range(0, len(data)-1):
+    for i in range(0, len(data)):
         minIndex = i 
-        for j in range(i+1, len(data)-1):
+        for j in range(i+1, len(data)):
             if (data[j] < data[minIndex]):
                 minIndex = j
         tools.swap(data, minIndex, i)
