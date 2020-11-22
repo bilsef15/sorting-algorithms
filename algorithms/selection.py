@@ -1,6 +1,6 @@
 '''Implementation of the selection sort algorithm.'''
 
-import tools.tools as tools
+import tools.toolFunctions as tools
 
 def selectionSort(data: list) -> list:
     '''
