@@ -18,13 +18,13 @@ def cocktailSort(data: list) -> list():
 
     '''
     #Since range is exclusive, initial values are 1 off respectively
-    start = -1
-    end = len(data)
+    start = 0
+    end = len(data)-1
     
     while (end > start):
         
         #the forward pass
-        for index in range(start, end-1):
+        for index in range(start, end):
             if (data[index] > data[index+1]):
                 tools.swap(data, index, index+1)
         end-=1
@@ -33,4 +33,5 @@ def cocktailSort(data: list) -> list():
             if (data[index] < data[index-1]):
                 tools.swap(data, index, index-1)
         start+=1
+        print(data)
     return data
