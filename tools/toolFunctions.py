@@ -69,7 +69,7 @@ def isSorted(data: list) -> bool:
 
     '''
     sort = True
-    for i in range(1, len(data)-1):
+    for i in range(1, len(data)):
         if (data[i] < data[i-1]):
             sort = False
     return sort

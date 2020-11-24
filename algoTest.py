@@ -5,6 +5,7 @@ import algorithms.quick as quick
 import algorithms.insertion as insertion
 import algorithms.selection as selection
 import algorithms.shell as shell
+import algorithms.cocktail as cocktail
 import tools.toolFunctions as tools
 
 class testSortingAlgorithms(unittest.TestCase):
@@ -37,6 +38,11 @@ class testSortingAlgorithms(unittest.TestCase):
         self.assertTrue(tools.isSorted(shell.shellSort(
             tools.randomList(500))))
     
+    def testCocktailSort(self):
+        self.assertTrue(tools.isSorted(cocktail.cocktailSort(
+            tools.randomList(30))))
+        self.assertTrue(tools.isSorted(cocktail.cocktailSort(
+            tools.randomList(500))))
 
 if __name__== '__main__':
     unittest.main()
