@@ -281,8 +281,34 @@ class sortVisualizer:
                 self._updateImage()
             interval //= 2
              
-                
-                
+    def cocktailSort(self):
+        '''
+        This sorts the interanl list via cocktail sort.
+
+        Returns
+        -------
+        None.
+
+        '''
+        self._renderName("Cocktail Sort")
+        start = 0
+        end = len(self._data)-1
+    
+        while (end > start):
+        
+            #the forward pass
+            for index in range(start, end):
+                if (self._data[index] > self._data[index+1]):
+                    tools.swap(self._data, index, index+1)
+                    self._updateImage()
+            end-=1
+            #the backwards pass
+            pygame.time.wait(3)
+            for index in range(end, start, -1):
+                if (self._data[index] < self._data[index-1]):
+                    tools.swap(self._data, index, index-1)
+                    self._updateImage()
+            start+=1
                 
                 
                 
