@@ -32,7 +32,7 @@ visualizer.py - run this for those pretty visualizations!
 
 # Planned Features (in no particular order)
 - [x] Menu
-- [ ] Cocktail Sort
+- [X] Cocktail Sort
 - [X] Shell Sort
 
 # Potential Features (again, in no particular order)
